@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CodingTrivia">
+        <activity android:name=".AdvancedQuiz"></activity>
+        <activity android:name=".TimeTrials" />
+        <activity android:name=".GameSettings" />
+        <activity android:name=".QuickPlay" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
