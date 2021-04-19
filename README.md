@@ -1,7 +1,7 @@
 # CodingTrivia
 CS-441 Team Project Kerem Gurses, Ugurcan Demir, Birkan Ak
 
-                            Description
+# Description
 Playing trivia will help you learn coding and programming skills. Answer questions
 about Python, C++, JavaScript, Swift, Objective-C in bite-sized chunks.
 You may want to use the Coding Trivia app for the following reasons:
