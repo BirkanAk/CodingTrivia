@@ -2,6 +2,8 @@ package com.example.codingtrivia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -48,5 +50,20 @@ public class MainActivity extends AppCompatActivity {
     public void onAdvancedClick(View view) {
         Intent act_action = new Intent(this,AdvancedQuiz.class);
         startActivity(act_action);
+    }
+
+    public void onInfoClick(View view) {
+        AlertDialog infoDialog = new AlertDialog.Builder(MainActivity.this).create();
+        infoDialog.setTitle("Instructions");
+        infoDialog.setMessage("Welcome to our game, Coding Trivia! \nWe have 3 game modes: \n\n • Quick Play: adhks \n • Time Trials: adhks \n • Advanced Quiz: adhks \n\n You can also change the language in Change Coding Language view! \n\nHave fun");
+
+
+        infoDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Got it!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        infoDialog.show();
     }
 }
