@@ -32,8 +32,8 @@
 
     <Button
         android:id="@+id/settingsButton"
-        android:layout_width="195dp"
-        android:layout_height="69dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -41,8 +41,8 @@
         android:layout_marginRight="8dp"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:onClick="onSettings"
-        android:text="Settings"
-        android:textSize="22sp"
+        android:text="Change Coding Language"
+        android:textSize="15sp"
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
