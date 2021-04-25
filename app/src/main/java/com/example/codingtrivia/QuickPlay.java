@@ -17,7 +17,8 @@ public class QuickPlay extends AppCompatActivity {
 
         question_text=(TextView)findViewById(R.id.question_text);
         QuestionsArray.getInstance();
-        //
+        Questions q =QuestionsArray.questions_array[0];
+        question_text.setText(q.getQuestion());
     }
 
 
