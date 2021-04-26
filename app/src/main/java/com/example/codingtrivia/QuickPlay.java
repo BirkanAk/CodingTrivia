@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class QuickPlay extends AppCompatActivity {
     TextView question_text;
     RadioButton ans1;
@@ -25,10 +27,12 @@ public class QuickPlay extends AppCompatActivity {
         ans3=(RadioButton)findViewById(R.id.ans3_radio);
 
         QuestionsArray.getInstance();
-        Questions q =QuestionsArray.questions_array[0];
+        Random ran = new Random();
+        int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
+        Questions q =QuestionsArray.questions_array[randomquestion];
         question_text.setText(q.getQuestion());
-        String[] ansArr=q.shuffleAnswerArray();
 
+        String[] ansArr=q.shuffleAnswerArray();
         ans1.setText(ansArr[0]);
         ans2.setText(ansArr[1]);
         ans3.setText(ansArr[2]);
