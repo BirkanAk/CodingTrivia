@@ -21,10 +21,19 @@ public class QuickPlay extends AppCompatActivity {
 
         question_text=(TextView)findViewById(R.id.question_text);
         ans1=(RadioButton)findViewById(R.id.ans1_radio);
+        ans2=(RadioButton)findViewById(R.id.ans2_radio);
+        ans3=(RadioButton)findViewById(R.id.ans3_radio);
 
         QuestionsArray.getInstance();
         Questions q =QuestionsArray.questions_array[0];
         question_text.setText(q.getQuestion());
+        String[] ansArr=q.shuffleAnswerArray();
+
+        ans1.setText(ansArr[0]);
+        ans2.setText(ansArr[1]);
+        ans3.setText(ansArr[2]);
+
+
     }
 
 

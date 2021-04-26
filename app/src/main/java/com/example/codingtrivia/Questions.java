@@ -1,5 +1,9 @@
 package com.example.codingtrivia;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+
 enum QType{
     Python,
     Cpp,
@@ -41,5 +45,12 @@ public class Questions {
 
     public QType getqType() {
         return qType;
+    }
+    public String[] shuffleAnswerArray()
+    {
+        String[] answerArray = {answer1,answer2,answer3};
+        Collections.shuffle(Arrays.asList(answerArray));
+        return answerArray;
+
     }
 }
