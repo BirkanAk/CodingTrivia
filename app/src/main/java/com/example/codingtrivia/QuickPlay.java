@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class QuickPlay extends AppCompatActivity {
     TextView question_text;
+    RadioButton ans1;
+    RadioButton ans2;
+    RadioButton ans3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,8 @@ public class QuickPlay extends AppCompatActivity {
         setContentView(R.layout.activity_quick_play);
 
         question_text=(TextView)findViewById(R.id.question_text);
+        ans1=(RadioButton)findViewById(R.id.ans1_radio);
+
         QuestionsArray.getInstance();
         Questions q =QuestionsArray.questions_array[0];
         question_text.setText(q.getQuestion());
