@@ -42,16 +42,16 @@ public class QuestionsArray {
         q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
         questions_array[10]=q;
 
-        q=new Questions(QType.Java,"What is a correct syntax to output \"Hello World\" in Python?","p(\"Hello World\")","echo(\"Hello World\");","print(\"Hello World\")","print(\"Hello World\")");
+        q=new Questions(QType.Java,"java.util.Collections is a:","Class","Interface","Object","Class");
         questions_array[11]=q;
 
-        q=new Questions(QType.Java,"What is a correct syntax to output \"Hello World\" in Python?","p(\"Hello World\")","echo(\"Hello World\");","print(\"Hello World\")","print(\"Hello World\")");
+        q=new Questions(QType.Java,"Which of those allows duplicate elements?","Set","List","All","List");
         questions_array[12]=q;
 
-        q=new Questions(QType.Java,"What is a correct syntax to output \"Hello World\" in Python?","p(\"Hello World\")","echo(\"Hello World\");","print(\"Hello World\")","print(\"Hello World\")");
+        q=new Questions(QType.Java,"Which of those doesn’t have an index based structure?","List","Set","Map","Set");
         questions_array[13]=q;
 
-        q=new Questions(QType.Java,"What is a correct syntax to output \"Hello World\" in Python?","p(\"Hello World\")","echo(\"Hello World\");","print(\"Hello World\")","print(\"Hello World\")");
+        q=new Questions(QType.Java,"Which allows the storage of a null key and null values?","Hashtable","HashMap","None of the above","HashMap");
         questions_array[14]=q;
 
     }
