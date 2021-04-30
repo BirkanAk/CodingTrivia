@@ -36,8 +36,6 @@ public class QuickPlay extends AppCompatActivity {
         ans1.setText(ansArr[0]);
         ans2.setText(ansArr[1]);
         ans3.setText(ansArr[2]);
-
-
     }
 
 

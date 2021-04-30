@@ -51,6 +51,5 @@ public class Questions {
         String[] answerArray = {answer1,answer2,answer3};
         Collections.shuffle(Arrays.asList(answerArray));
         return answerArray;
-
     }
 }
