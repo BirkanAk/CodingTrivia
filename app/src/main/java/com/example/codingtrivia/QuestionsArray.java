@@ -18,7 +18,7 @@ public class QuestionsArray {
         q=new Questions(QType.Python,"Which one is NOT a legal variable name?","my-var","_myvar","my_var","my-var");
         questions_array[2]=q;
 
-        q=new Questions(QType.Python,"How do you create a variable with the numeric value 5?","x = int(5)","x = 5","Both the other answers are correct","print(\"Hello World\")");
+        q=new Questions(QType.Python,"How do you create a variable with the numeric value 5?","x = int(5)","x = 5","Both the other answers are correct","Both the other answers are correct");
         questions_array[3]=q;
 
         q=new Questions(QType.Python,"What is the correct file extension for Python files?",".pyth",".pyt",".py",".py");
@@ -27,7 +27,7 @@ public class QuestionsArray {
         q=new Questions(QType.Cpp,"Choose the operator which cannot be overloaded.","/","()","::","::");
         questions_array[5]=q;
 
-        q=new Questions(QType.Cpp,"A user defined header file is included by following statement in general.","#include “file.h"," #include <file.h>","#include <file>","#include “file.h");
+        q=new Questions(QType.Cpp,"A user defined header file is included by following statement in general.","#include “file.h\""," #include <file.h>","#include <file>","#include “file.h");
         questions_array[6]=q;
 
         q=new Questions(QType.Cpp,"Class function which is called automatically as soon as the object is created is called as __","Constructor","Destructor","Friend function","Constructor");

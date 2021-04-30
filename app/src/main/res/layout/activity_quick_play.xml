@@ -55,6 +55,7 @@
             android:textColor="#E6D3D3"
             android:textColorLink="#FFFFFF"
             android:textSize="20dp"
+            android:onClick="onCheck"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,6 +66,7 @@
             android:layout_width="250dp"
             android:layout_height="100dp"
             android:text="ans2"
+            android:onClick="onCheck"
             android:textColor="#E6D3D3"
             android:textColorLink="#FFFFFF"
             android:textSize="20dp"
@@ -77,6 +79,7 @@
             android:id="@+id/ans3_radio"
             android:layout_width="250dp"
             android:layout_height="100dp"
+            android:onClick="onCheck"
             android:text="ans3"
             android:textColor="#E6D3D3"
             android:textColorLink="#FFFFFF"
@@ -88,11 +91,12 @@
 
     </RadioGroup>
 
-    <Button
-        android:id="@+id/goBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onGoBackClick"
+    <ImageView
+        android:id="@+id/submitPng"
+        android:layout_width="96dp"
+        android:layout_height="69dp"
+        android:onClick="onSubmit"
+        android:src="@drawable/check"
         android:text="Go Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +104,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.98" />
 
-
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
