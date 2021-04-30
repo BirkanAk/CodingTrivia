@@ -2,6 +2,8 @@ package com.example.codingtrivia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -59,17 +61,26 @@ public class QuickPlay extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 refresh();
             }
+            else{
+                dialogAlert();
+            }
         }
         else if(ans2.isChecked()){
             if(ans2.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 refresh();
             }
+            else{
+                dialogAlert();
+            }
         }
         else if(ans3.isChecked()){
             if(ans3.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 refresh();
+            }
+            else{
+                dialogAlert();
             }
         }
         scoreText.setTextSize(15);
@@ -79,5 +90,21 @@ public class QuickPlay extends AppCompatActivity {
 
     public void onCheck(View view) {
         submitPng.setVisibility(View.VISIBLE);
+    }
+    private void dialogAlert(){
+
+        AlertDialog gameEndDialog = new AlertDialog.Builder(QuickPlay.this).create();
+        gameEndDialog.setTitle("You Lost!");
+        gameEndDialog.setMessage("Here is your score: ");
+        gameEndDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Take Me to Main Menu",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Intent act_action = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(act_action);
+                    }
+                });
+        gameEndDialog.show();
+
     }
 }
