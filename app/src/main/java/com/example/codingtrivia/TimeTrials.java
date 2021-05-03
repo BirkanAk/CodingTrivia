@@ -29,7 +29,7 @@ public class TimeTrials extends AppCompatActivity {
     Questions question;
     TextView countdown_text;
     // Initialize Time Duration
-    long duration = TimeUnit.MINUTES.toMillis(1);
+    long duration = TimeUnit.SECONDS.toMillis(15);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
