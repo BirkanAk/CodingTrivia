@@ -7,30 +7,116 @@
     tools:context=".AdvancedQuiz"
     android:background="@drawable/background">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="This is the advanced quiz view"
-        android:textAllCaps="true"
-        android:textSize="40dp"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/panel" />
+
+    <TextView
+        android:id="@+id/question_text"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:gravity="center"
+        android:text="This is the quick play view"
+        android:textAllCaps="true"
         android:textColor="@color/white"
-        />
-    <Button
-        android:id="@+id/goBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onGoBackClick"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+
+    <RadioGroup
+        android:id="@+id/groupradio"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6">
+
+        <RadioButton
+            android:id="@+id/ans1_radio"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:text="ans1"
+            android:textColor="#E6D3D3"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20dp"
+            android:onClick="onCheck"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/ans2_radio"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:text="ans2"
+            android:onClick="onCheck"
+            android:textColor="#E6D3D3"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/ans3_radio"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:onClick="onCheck"
+            android:text="ans3"
+            android:textColor="#E6D3D3"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/submitPng"
+        android:layout_width="96dp"
+        android:layout_height="69dp"
+        android:onClick="onSubmit"
+        android:src="@drawable/check"
         android:text="Go Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894" />
+        app:layout_constraintVertical_bias="0.98" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
