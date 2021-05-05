@@ -2,7 +2,9 @@ package com.example.codingtrivia;
 
 public class Score {
     private static Score SCORE=null;
-    public static int point =0;
+    public static int advanced_point =0;
+    public static int time_point =0;
+    public static int quick_point =0;
     public static int highscore=0;
 
 

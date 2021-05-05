@@ -64,14 +64,14 @@ public class QuickPlay extends AppCompatActivity {
 
         scoreText.setTextSize(20);
         Score.getInstance();
-        scoreText.setText("Score: " + Score.point);
+        scoreText.setText("Score: " + Score.quick_point);
     }
 
     public void onSubmit(View view) {
         if(ans1.isChecked()){
             if(ans1.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
-                Score.point += 1;
+                Score.quick_point += 1;
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }
@@ -82,7 +82,7 @@ public class QuickPlay extends AppCompatActivity {
         else if(ans2.isChecked()){
             if(ans2.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
-                Score.point += 1;
+                Score.quick_point += 1;
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }
@@ -93,7 +93,7 @@ public class QuickPlay extends AppCompatActivity {
         else if(ans3.isChecked()){
             if(ans3.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
-                Score.point += 1;
+                Score.quick_point += 1;
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }
@@ -113,12 +113,12 @@ public class QuickPlay extends AppCompatActivity {
         AlertDialog gameEndDialog = new AlertDialog.Builder(QuickPlay.this).create();
         gameEndDialog.setTitle("You Lost!");
         gameEndDialog.setCanceledOnTouchOutside(false);
-        gameEndDialog.setMessage("Here is your score: " + Score.point);
+        gameEndDialog.setMessage("Here is your score: " + Score.quick_point);
         gameEndDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Take Me to Main Menu",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        Score.point = 0;
+                        Score.quick_point = 0;
                         Intent act_action = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(act_action);
                     }
