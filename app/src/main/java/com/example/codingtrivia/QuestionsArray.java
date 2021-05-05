@@ -27,7 +27,7 @@ public class QuestionsArray {
         q=new Questions(QType.Cpp,"Choose the operator which cannot be overloaded.","/","()","::","::");
         questions_array[5]=q;
 
-        q=new Questions(QType.Cpp,"A user defined header file is included by following statement in general.","#include “file.h\""," #include <file.h>","#include <file>","#include “file.h");
+        q=new Questions(QType.Cpp,"A user defined header file is included by following statement in general.","#include “file.h\""," #include <file.h>","#include <file>","#include “file.h\"");
         questions_array[6]=q;
 
         q=new Questions(QType.Cpp,"Class function which is called automatically as soon as the object is created is called as __","Constructor","Destructor","Friend function","Constructor");

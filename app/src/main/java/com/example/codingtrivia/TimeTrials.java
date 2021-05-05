@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class TimeTrials extends AppCompatActivity {
     RadioButton ans3;
     Questions question;
     TextView countdown_text;
+    RadioGroup radioGroup;
     // Initialize Time Duration
     long duration = TimeUnit.SECONDS.toMillis(15);
 
@@ -43,6 +45,7 @@ public class TimeTrials extends AppCompatActivity {
         ans2=(RadioButton)findViewById(R.id.ans2_radio);
         ans3=(RadioButton)findViewById(R.id.ans3_radio);
         countdown_text = (TextView)findViewById(R.id.countdown_text);
+        radioGroup=(RadioGroup)findViewById(R.id.groupradio);
 
         submitPng.setVisibility(View.INVISIBLE);
 
@@ -78,6 +81,9 @@ public class TimeTrials extends AppCompatActivity {
 
         }.start();
 
+        refresh();
+    }
+    private void refresh(){
         QuestionsArray.getInstance();
         Random ran = new Random();
         int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
@@ -89,14 +95,13 @@ public class TimeTrials extends AppCompatActivity {
         ans2.setText(ansArr[1]);
         ans3.setText(ansArr[2]);
 
+        radioGroup.clearCheck();
+
+
+
         scoreText.setTextSize(20);
         Score.getInstance();
         scoreText.setText("Score: " + Score.point);
-    }
-    private void refresh(){
-        Intent refresh = getIntent();
-        finish();
-        startActivity(refresh);
     }
 
     public void onSubmit(View view) {
@@ -104,8 +109,9 @@ public class TimeTrials extends AppCompatActivity {
             if(ans1.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
-                duration += TimeUnit.MINUTES.toSeconds(5);
+                duration += TimeUnit.SECONDS.toMillis(5);
                 refresh();
+                onCheckRemove();
             }
             else{
                 dialogAlert();
@@ -115,8 +121,9 @@ public class TimeTrials extends AppCompatActivity {
             if(ans2.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
-                duration += TimeUnit.MINUTES.toSeconds(5);
+                duration += TimeUnit.SECONDS.toMillis(5);
                 refresh();
+                onCheckRemove();
             }
             else{
                 dialogAlert();
@@ -126,8 +133,9 @@ public class TimeTrials extends AppCompatActivity {
             if(ans3.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
-                duration += TimeUnit.MINUTES.toSeconds(5);
+                duration += TimeUnit.SECONDS.toMillis(5);
                 refresh();
+                onCheckRemove();
             }
             else{
                 dialogAlert();
@@ -138,10 +146,12 @@ public class TimeTrials extends AppCompatActivity {
     public void onCheck(View view) {
         submitPng.setVisibility(View.VISIBLE);
     }
+    public void onCheckRemove(){submitPng.setVisibility(View.INVISIBLE);}
     private void dialogAlert(){
 
         AlertDialog gameEndDialog = new AlertDialog.Builder(TimeTrials.this).create();
         gameEndDialog.setTitle("You Lost!");
+        gameEndDialog.setCanceledOnTouchOutside(false);
         gameEndDialog.setMessage("Here is your score: " + Score.point);
         gameEndDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Take Me to Main Menu",
                 new DialogInterface.OnClickListener() {

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class AdvancedQuiz extends AppCompatActivity {
     RadioButton ans2;
     ImageView submitPng;
     RadioButton ans3;
+    RadioGroup radioGroup;
     Questions question;
 
     @Override
@@ -36,8 +38,17 @@ public class AdvancedQuiz extends AppCompatActivity {
         ans2=(RadioButton)findViewById(R.id.ans2_radio);
         ans3=(RadioButton)findViewById(R.id.ans3_radio);
 
+        radioGroup=(RadioGroup)findViewById(R.id.groupradio);
+
         submitPng.setVisibility(View.INVISIBLE);
 
+        refresh();
+
+
+
+    }
+
+    private void refresh(){
         QuestionsArray.getInstance();
         Random ran = new Random();
         int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
@@ -49,18 +60,13 @@ public class AdvancedQuiz extends AppCompatActivity {
         ans2.setText(ansArr[1]);
         ans3.setText(ansArr[2]);
 
+        radioGroup.clearCheck();
+
+
+
         scoreText.setTextSize(20);
         Score.getInstance();
         scoreText.setText("Score: " + Score.point);
-
-
-
-    }
-
-    private void refresh(){
-        Intent refresh = getIntent();
-        finish();
-        startActivity(refresh);
     }
 
     public void onSubmit(View view) {
@@ -69,6 +75,7 @@ public class AdvancedQuiz extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
                 refresh();
+                submitPng.setVisibility(View.INVISIBLE);
             }
             else{
                 dialogAlert();
@@ -79,6 +86,7 @@ public class AdvancedQuiz extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
                 refresh();
+                submitPng.setVisibility(View.INVISIBLE);
             }
             else{
                 dialogAlert();
@@ -89,6 +97,7 @@ public class AdvancedQuiz extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
                 refresh();
+                submitPng.setVisibility(View.INVISIBLE);
             }
             else{
                 dialogAlert();
@@ -105,6 +114,7 @@ public class AdvancedQuiz extends AppCompatActivity {
         AlertDialog gameEndDialog = new AlertDialog.Builder(AdvancedQuiz.this).create();
         gameEndDialog.setTitle("You Lost!");
         gameEndDialog.setMessage("Here is your score: " + Score.point);
+        gameEndDialog.setCanceledOnTouchOutside(false);
         gameEndDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Take Me to Main Menu",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

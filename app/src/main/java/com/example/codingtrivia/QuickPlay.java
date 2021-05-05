@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class QuickPlay extends AppCompatActivity {
     ImageView submitPng;
     RadioButton ans3;
     Questions question;
+    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,17 @@ public class QuickPlay extends AppCompatActivity {
         ans1=(RadioButton)findViewById(R.id.ans1_radio);
         ans2=(RadioButton)findViewById(R.id.ans2_radio);
         ans3=(RadioButton)findViewById(R.id.ans3_radio);
+        radioGroup=(RadioGroup)findViewById(R.id.groupradio);
 
         submitPng.setVisibility(View.INVISIBLE);
 
+        refresh();
+
+
+
+    }
+
+    private void refresh(){
         QuestionsArray.getInstance();
         Random ran = new Random();
         int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
@@ -48,18 +58,13 @@ public class QuickPlay extends AppCompatActivity {
         ans2.setText(ansArr[1]);
         ans3.setText(ansArr[2]);
 
+        radioGroup.clearCheck();
+
+
+
         scoreText.setTextSize(20);
         Score.getInstance();
         scoreText.setText("Score: " + Score.point);
-
-
-
-    }
-
-    private void refresh(){
-        Intent refresh = getIntent();
-        finish();
-        startActivity(refresh);
     }
 
     public void onSubmit(View view) {
@@ -68,6 +73,7 @@ public class QuickPlay extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
                 refresh();
+                submitPng.setVisibility(View.INVISIBLE);
             }
             else{
                 dialogAlert();
@@ -78,6 +84,7 @@ public class QuickPlay extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
                 refresh();
+                submitPng.setVisibility(View.INVISIBLE);
             }
             else{
                 dialogAlert();
@@ -88,6 +95,7 @@ public class QuickPlay extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.point += 1;
                 refresh();
+                submitPng.setVisibility(View.INVISIBLE);
             }
             else{
                 dialogAlert();
@@ -99,10 +107,12 @@ public class QuickPlay extends AppCompatActivity {
     public void onCheck(View view) {
         submitPng.setVisibility(View.VISIBLE);
     }
+
     private void dialogAlert(){
 
         AlertDialog gameEndDialog = new AlertDialog.Builder(QuickPlay.this).create();
         gameEndDialog.setTitle("You Lost!");
+        gameEndDialog.setCanceledOnTouchOutside(false);
         gameEndDialog.setMessage("Here is your score: " + Score.point);
         gameEndDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Take Me to Main Menu",
                 new DialogInterface.OnClickListener() {
