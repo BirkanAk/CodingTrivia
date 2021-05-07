@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +13,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.Random;
 
@@ -24,6 +27,7 @@ public class QuickPlay extends AppCompatActivity {
     RadioButton ans3;
     Questions question;
     RadioGroup radioGroup;
+    TextView quickplayHighscore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,7 @@ public class QuickPlay extends AppCompatActivity {
         ans2=(RadioButton)findViewById(R.id.ans2_radio);
         ans3=(RadioButton)findViewById(R.id.ans3_radio);
         radioGroup=(RadioGroup)findViewById(R.id.groupradio);
+        quickplayHighscore=(TextView)findViewById(R.id.highscoreText);
 
         submitPng.setVisibility(View.INVISIBLE);
 
@@ -65,6 +70,11 @@ public class QuickPlay extends AppCompatActivity {
         scoreText.setTextSize(20);
         Score.getInstance();
         scoreText.setText("Score: " + Score.quick_point);
+
+        Score.getInstance();
+        SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+        Score.quickplay_highscore = prefs.getInt("QuickPlay Highscore", 0);
+        quickplayHighscore.setText("QuickPlay Highscore: "+Score.quickplay_highscore);
     }
 
     public void onSubmit(View view) {
@@ -72,6 +82,13 @@ public class QuickPlay extends AppCompatActivity {
             if(ans1.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.quick_point += 1;
+                if (Score.quick_point>Score.quickplay_highscore){
+                    Score.quickplay_highscore=Score.quick_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("QuickPlay Highscore", Score.quickplay_highscore);
+                    editor.commit();
+                }
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }
@@ -83,6 +100,13 @@ public class QuickPlay extends AppCompatActivity {
             if(ans2.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.quick_point += 1;
+                if (Score.quick_point>Score.quickplay_highscore){
+                    Score.quickplay_highscore=Score.quick_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("QuickPlay Highscore", Score.quickplay_highscore);
+                    editor.commit();
+                }
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }
@@ -94,6 +118,13 @@ public class QuickPlay extends AppCompatActivity {
             if(ans3.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.quick_point += 1;
+                if (Score.quick_point>Score.quickplay_highscore){
+                    Score.quickplay_highscore=Score.quick_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("QuickPlay Highscore", Score.quickplay_highscore);
+                    editor.commit();
+                }
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }

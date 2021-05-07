@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.sql.Time;
 import java.util.Locale;
@@ -30,6 +33,7 @@ public class TimeTrials extends AppCompatActivity {
     Questions question;
     TextView countdown_text;
     RadioGroup radioGroup;
+    TextView timeTrialHighscore;
     // Initialize Time Duration
     long duration = TimeUnit.SECONDS.toMillis(15);
 
@@ -46,7 +50,7 @@ public class TimeTrials extends AppCompatActivity {
         ans3=(RadioButton)findViewById(R.id.ans3_radio);
         countdown_text = (TextView)findViewById(R.id.countdown_text);
         radioGroup=(RadioGroup)findViewById(R.id.groupradio);
-
+        timeTrialHighscore=(TextView)findViewById(R.id.highscoreText);
         submitPng.setVisibility(View.INVISIBLE);
 
 
@@ -102,6 +106,11 @@ public class TimeTrials extends AppCompatActivity {
         scoreText.setTextSize(20);
         Score.getInstance();
         scoreText.setText("Score: " + Score.time_point);
+
+        Score.getInstance();
+        SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+        Score.time_highscore = prefs.getInt("TimeTrial Highscore", 0);
+        timeTrialHighscore.setText("TimeTrial Highscore: "+Score.time_highscore);
     }
 
     public void onSubmit(View view) {
@@ -109,6 +118,13 @@ public class TimeTrials extends AppCompatActivity {
             if(ans1.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.time_point += 1;
+                if (Score.time_point>Score.time_highscore){
+                    Score.time_highscore=Score.time_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("TimeTrial Highscore", Score.time_highscore);
+                    editor.commit();
+                }
                 duration += TimeUnit.SECONDS.toMillis(5);
                 refresh();
                 onCheckRemove();
@@ -122,6 +138,13 @@ public class TimeTrials extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.time_point += 1;
                 duration += TimeUnit.SECONDS.toMillis(5);
+                if (Score.time_point>Score.time_highscore){
+                    Score.time_highscore=Score.time_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("TimeTrial Highscore", Score.time_highscore);
+                    editor.commit();
+                }
                 refresh();
                 onCheckRemove();
             }
@@ -133,6 +156,13 @@ public class TimeTrials extends AppCompatActivity {
             if(ans3.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.time_point += 1;
+                if (Score.time_point>Score.time_highscore){
+                    Score.time_highscore=Score.time_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("TimeTrial Highscore", Score.time_highscore);
+                    editor.commit();
+                }
                 duration += TimeUnit.SECONDS.toMillis(5);
                 refresh();
                 onCheckRemove();

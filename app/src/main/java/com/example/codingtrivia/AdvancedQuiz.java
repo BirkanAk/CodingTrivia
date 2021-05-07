@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,6 +26,7 @@ public class AdvancedQuiz extends AppCompatActivity {
     RadioButton ans3;
     RadioGroup radioGroup;
     Questions question;
+    TextView advanced_highscore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,12 @@ public class AdvancedQuiz extends AppCompatActivity {
         ans1=(RadioButton)findViewById(R.id.ans1_radio);
         ans2=(RadioButton)findViewById(R.id.ans2_radio);
         ans3=(RadioButton)findViewById(R.id.ans3_radio);
+        advanced_highscore=(TextView)findViewById(R.id.highscoreText);
 
         radioGroup=(RadioGroup)findViewById(R.id.groupradio);
 
         submitPng.setVisibility(View.INVISIBLE);
+
 
         refresh();
 
@@ -67,6 +71,12 @@ public class AdvancedQuiz extends AppCompatActivity {
         scoreText.setTextSize(20);
         Score.getInstance();
         scoreText.setText("Score: " + Score.advanced_point);
+
+        Score.getInstance();
+        SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+        Score.advanced_highscore = prefs.getInt("Advanced Highscore", 0);
+        advanced_highscore.setText("Advanced Highscore: "+Score.advanced_highscore);
+
     }
 
     public void onSubmit(View view) {
@@ -74,6 +84,13 @@ public class AdvancedQuiz extends AppCompatActivity {
             if(ans1.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.advanced_point += 1;
+                if (Score.advanced_point>Score.advanced_highscore){
+                    Score.advanced_highscore=Score.advanced_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("Advanced Highscore", Score.advanced_highscore);
+                    editor.commit();
+                }
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }
@@ -85,6 +102,13 @@ public class AdvancedQuiz extends AppCompatActivity {
             if(ans2.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.advanced_point += 1;
+                if (Score.advanced_point>Score.advanced_highscore){
+                    Score.advanced_highscore=Score.advanced_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("Advanced Highscore", Score.advanced_highscore);
+                    editor.commit();
+                }
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }
@@ -96,6 +120,13 @@ public class AdvancedQuiz extends AppCompatActivity {
             if(ans3.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.advanced_point += 1;
+                if (Score.advanced_point>Score.advanced_highscore){
+                    Score.advanced_highscore=Score.advanced_point;
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("Advanced Highscore", Score.advanced_highscore);
+                    editor.commit();
+                }
                 refresh();
                 submitPng.setVisibility(View.INVISIBLE);
             }

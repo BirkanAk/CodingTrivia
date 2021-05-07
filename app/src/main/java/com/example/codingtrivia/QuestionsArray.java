@@ -64,7 +64,6 @@ public class QuestionsArray {
         }else{
             return QuestionsArray.QUESTIONS;
         }
-
     }
 
 }
