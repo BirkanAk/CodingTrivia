@@ -53,8 +53,8 @@
 
         />
 
-    <Switch
-        android:id="@+id/switch_cpp"
+    <CheckBox
+        android:id="@+id/cb_cpp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Switch"
@@ -65,8 +65,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.123" />
 
-    <Switch
-        android:id="@+id/switch_python"
+    <CheckBox
+        android:id="@+id/cb_python"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Switch"
@@ -77,8 +77,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.238" />
 
-    <Switch
-        android:id="@+id/switch_java"
+    <CheckBox
+        android:id="@+id/cb_java"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Switch"
@@ -101,13 +101,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.894" />
 
-
-
-
-
-
-
-
+    <Button
+        android:id="@+id/filterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply Filter"
+        android:onClick="applyFilter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="317dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

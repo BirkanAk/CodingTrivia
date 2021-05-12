@@ -85,7 +85,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:text="Advanced Quiz"
+        android:text="Binghamton Quiz"
         android:onClick="onAdvancedClick"
         android:textSize="15sp"
         android:typeface="sans"

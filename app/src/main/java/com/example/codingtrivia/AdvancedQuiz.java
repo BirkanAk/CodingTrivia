@@ -54,15 +54,40 @@ public class AdvancedQuiz extends AppCompatActivity {
 
     private void refresh(){
         QuestionsArray.getInstance();
-        Random ran = new Random();
-        int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
-        question =QuestionsArray.questions_array[randomquestion];
-        question_text.setText(question.getQuestion());
+        if(QuestionsArray.selected=="false"){
+            Random ran = new Random();
+            int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
+            question =QuestionsArray.questions_array[randomquestion];
+            question_text.setText(question.getQuestion());
 
-        String[] ansArr=question.shuffleAnswerArray();
-        ans1.setText(ansArr[0]);
-        ans2.setText(ansArr[1]);
-        ans3.setText(ansArr[2]);
+            String[] ansArr=question.shuffleAnswerArray();
+            ans1.setText(ansArr[0]);
+            ans2.setText(ansArr[1]);
+            ans3.setText(ansArr[2]);
+        }
+        else if(QuestionsArray.selected=="false"){
+            Random ran = new Random();
+            int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
+            question =QuestionsArray.questions_array[randomquestion];
+            question_text.setText(question.getQuestion());
+
+            String[] ansArr=question.shuffleAnswerArray();
+            ans1.setText(ansArr[0]);
+            ans2.setText(ansArr[1]);
+            ans3.setText(ansArr[2]);
+        }
+        else if(QuestionsArray.selected=="false"){
+            Random ran = new Random();
+            int randomquestion = ran.nextInt(QuestionsArray.filtered_questions.length);
+            question =QuestionsArray.filtered_questions[randomquestion];
+            question_text.setText(question.getQuestion());
+
+            String[] ansArr=question.shuffleAnswerArray();
+            ans1.setText(ansArr[0]);
+            ans2.setText(ansArr[1]);
+            ans3.setText(ansArr[2]);
+
+        }
 
         radioGroup.clearCheck();
 
