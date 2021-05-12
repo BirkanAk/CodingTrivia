@@ -54,6 +54,7 @@ public class TimeTrials extends AppCompatActivity {
         submitPng.setVisibility(View.INVISIBLE);
 
 
+
         // Initialize Countdown Timer
         new CountDownTimer(duration, 1000) {
 
@@ -84,12 +85,22 @@ public class TimeTrials extends AppCompatActivity {
             }
 
         }.start();
-
         refresh();
     }
     private void refresh(){
         QuestionsArray.getInstance();
-        if(QuestionsArray.selected=="C++"){
+        if(QuestionsArray.selected=="All"){
+            Random ran = new Random();
+            int randomquestion = ran.nextInt(QuestionsArray.all_questions.length);
+            question =QuestionsArray.all_questions[randomquestion];
+            question_text.setText(question.getQuestion());
+
+            String[] ansArr=question.shuffleAnswerArray();
+            ans1.setText(ansArr[0]);
+            ans2.setText(ansArr[1]);
+            ans3.setText(ansArr[2]);
+        }
+        else if(QuestionsArray.selected=="C++"){
             Random ran = new Random();
             int randomquestion = ran.nextInt(QuestionsArray.cpp_questions.length);
             question =QuestionsArray.cpp_questions[randomquestion];
@@ -121,8 +132,9 @@ public class TimeTrials extends AppCompatActivity {
             ans1.setText(ansArr[0]);
             ans2.setText(ansArr[1]);
             ans3.setText(ansArr[2]);
-
         }
+
+
 
 
         radioGroup.clearCheck();
@@ -151,7 +163,6 @@ public class TimeTrials extends AppCompatActivity {
                     editor.putInt("TimeTrial Highscore", Score.time_highscore);
                     editor.commit();
                 }
-                duration += TimeUnit.SECONDS.toMillis(5);
                 refresh();
                 onCheckRemove();
             }
@@ -163,7 +174,6 @@ public class TimeTrials extends AppCompatActivity {
             if(ans2.getText()==question.getReal_answer()){
                 Toast.makeText(getApplicationContext(), "Correct! +1 Score", Toast.LENGTH_SHORT).show();
                 Score.time_point += 1;
-                duration += TimeUnit.SECONDS.toMillis(5);
                 if (Score.time_point>Score.time_highscore){
                     Score.time_highscore=Score.time_point;
                     SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
@@ -189,7 +199,6 @@ public class TimeTrials extends AppCompatActivity {
                     editor.putInt("TimeTrial Highscore", Score.time_highscore);
                     editor.commit();
                 }
-                duration += TimeUnit.SECONDS.toMillis(5);
                 refresh();
                 onCheckRemove();
             }

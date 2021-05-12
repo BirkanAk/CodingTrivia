@@ -16,6 +16,7 @@ public class GameSettings extends AppCompatActivity {
     RadioButton javacb;
     RadioButton pythoncb;
     RadioButton cppcb;
+    RadioButton all_q;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +27,11 @@ public class GameSettings extends AppCompatActivity {
         javacb=(RadioButton)findViewById(R.id.cb_java);
         pythoncb=(RadioButton)findViewById(R.id.cb_python);
         cppcb=(RadioButton)findViewById(R.id.cb_cpp);
+        all_q=(RadioButton)findViewById(R.id.all_q);
 
 
     }
 
-    public void onGoBackClick(View view) {
-        Intent act_action = new Intent(this, MainActivity.class);
-        startActivity(act_action);
-    }
 
     public void applyFilter(View view) {
         QuestionsArray.getInstance();
@@ -47,5 +45,11 @@ public class GameSettings extends AppCompatActivity {
         if(cppcb.isChecked()){
             QuestionsArray.selected="C++";
         }
+        if(all_q.isChecked()){
+            QuestionsArray.selected="All";
+        }
+
+        Intent act_action = new Intent(this, MainActivity.class);
+        startActivity(act_action);
     }
 }

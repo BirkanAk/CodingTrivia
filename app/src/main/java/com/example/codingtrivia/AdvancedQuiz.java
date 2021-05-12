@@ -54,7 +54,18 @@ public class AdvancedQuiz extends AppCompatActivity {
 
     private void refresh(){
         QuestionsArray.getInstance();
-        if(QuestionsArray.selected=="C++"){
+        if(QuestionsArray.selected=="All"){
+            Random ran = new Random();
+            int randomquestion = ran.nextInt(QuestionsArray.all_questions.length);
+            question =QuestionsArray.all_questions[randomquestion];
+            question_text.setText(question.getQuestion());
+
+            String[] ansArr=question.shuffleAnswerArray();
+            ans1.setText(ansArr[0]);
+            ans2.setText(ansArr[1]);
+            ans3.setText(ansArr[2]);
+        }
+        else if(QuestionsArray.selected=="C++"){
             Random ran = new Random();
             int randomquestion = ran.nextInt(QuestionsArray.cpp_questions.length);
             question =QuestionsArray.cpp_questions[randomquestion];
@@ -86,7 +97,6 @@ public class AdvancedQuiz extends AppCompatActivity {
             ans1.setText(ansArr[0]);
             ans2.setText(ansArr[1]);
             ans3.setText(ansArr[2]);
-
         }
 
         radioGroup.clearCheck();
