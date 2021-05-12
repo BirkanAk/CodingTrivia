@@ -54,10 +54,10 @@ public class AdvancedQuiz extends AppCompatActivity {
 
     private void refresh(){
         QuestionsArray.getInstance();
-        if(QuestionsArray.selected=="false"){
+        if(QuestionsArray.selected=="C++"){
             Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
-            question =QuestionsArray.questions_array[randomquestion];
+            int randomquestion = ran.nextInt(QuestionsArray.cpp_questions.length);
+            question =QuestionsArray.cpp_questions[randomquestion];
             question_text.setText(question.getQuestion());
 
             String[] ansArr=question.shuffleAnswerArray();
@@ -65,10 +65,10 @@ public class AdvancedQuiz extends AppCompatActivity {
             ans2.setText(ansArr[1]);
             ans3.setText(ansArr[2]);
         }
-        else if(QuestionsArray.selected=="false"){
+        else if(QuestionsArray.selected=="Python"){
             Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.questions_array.length);
-            question =QuestionsArray.questions_array[randomquestion];
+            int randomquestion = ran.nextInt(QuestionsArray.python_questions.length);
+            question =QuestionsArray.python_questions[randomquestion];
             question_text.setText(question.getQuestion());
 
             String[] ansArr=question.shuffleAnswerArray();
@@ -76,10 +76,10 @@ public class AdvancedQuiz extends AppCompatActivity {
             ans2.setText(ansArr[1]);
             ans3.setText(ansArr[2]);
         }
-        else if(QuestionsArray.selected=="false"){
+        else if(QuestionsArray.selected=="Java"){
             Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.filtered_questions.length);
-            question =QuestionsArray.filtered_questions[randomquestion];
+            int randomquestion = ran.nextInt(QuestionsArray.java_questions.length);
+            question =QuestionsArray.java_questions[randomquestion];
             question_text.setText(question.getQuestion());
 
             String[] ansArr=question.shuffleAnswerArray();

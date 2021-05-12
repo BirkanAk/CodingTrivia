@@ -7,14 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 
 import java.util.Arrays;
 
 public class GameSettings extends AppCompatActivity {
     Button filterButton;
-    CheckBox javacb;
-    CheckBox pythoncb;
-    CheckBox cppcb;
+    RadioButton javacb;
+    RadioButton pythoncb;
+    RadioButton cppcb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +23,9 @@ public class GameSettings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         filterButton=(Button)findViewById(R.id.filterButton);
-        javacb=(CheckBox)findViewById(R.id.cb_java);
-        pythoncb=(CheckBox)findViewById(R.id.cb_python);
-        cppcb=(CheckBox)findViewById(R.id.cb_cpp);
+        javacb=(RadioButton)findViewById(R.id.cb_java);
+        pythoncb=(RadioButton)findViewById(R.id.cb_python);
+        cppcb=(RadioButton)findViewById(R.id.cb_cpp);
 
 
     }
@@ -38,10 +39,13 @@ public class GameSettings extends AppCompatActivity {
         QuestionsArray.getInstance();
 
         if(javacb.isChecked()){
+            QuestionsArray.selected="Java";
         }
         if(pythoncb.isChecked()){
+            QuestionsArray.selected="Python";
         }
         if(cppcb.isChecked()){
+            QuestionsArray.selected="C++";
         }
     }
 }
