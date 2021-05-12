@@ -8,7 +8,7 @@ enum QType{
     Python,
     Cpp,
     Java,
-    Binghamton,
+    Binghamton
 }
 
 public class Questions {
