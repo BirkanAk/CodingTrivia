@@ -35,6 +35,53 @@ public class QuestionsArray {
         q=new Questions(QType.Python,"What is the correct file extension for Python files?",".pyth",".pyt",".py",".py");
         python_questions[4]=q;
 
+        q=new Questions(QType.Python,"A continuation loop can be converted to a for loop?","True","False"," ","True");
+        python_questions[5]=q;
+
+        q=new Questions(QType.Python,"Which of the following functions would NOT require an argument?","sum()","random()","type()","random()");
+        python_questions[6]=q;
+
+        q=new Questions(QType.Python,"Given the following expression: \n (status_light1 or status_light2) \n if status_light1 is True, then the entire expression is True","True","False"," ","True");
+        python_questions[7]=q;
+
+        q=new Questions(QType.Python,"Which can NOT be returned by a function with the keyword “return”?","a negative number","a positive number","all of the above","all of the above");
+        python_questions[8]=q;
+
+
+        q=new Questions(QType.Python,"What can cause an infinite loop?","Forgetting to update the control variable","Updating the control variable incorrectly","All of the above","All of the above");
+        python_questions[9]=q;
+
+        q=new Questions(QType.Python,"Which of the following methods give access to the element of the list which  is removed?","del","remove()","pop()","pop()");
+        python_questions[10]=q;
+
+        q=new Questions(QType.Python,"It is permitted to have a list as an element in a list.","True","False"," ","True");
+        python_questions[11]=q;
+
+        q=new Questions(QType.Python,"Given may = 'isolated', which of the following would return the full string?","may[:]","may[1:10]","may[2:]","may[:]");
+        python_questions[12]=q;
+
+        q=new Questions(QType.Python,"Which can be used as a sequence in a for loop?","a string","a list","All of the above","All of the above");
+        python_questions[13]=q;
+
+        q=new Questions(QType.Python,"Which of the following could be used to generate a list (i.e., type of  <class 'list'>)? ","[]","split()","All of the above","All of the above");
+        python_questions[14]=q;
+
+        q=new Questions(QType.Python,"You can loop through a dictionary with two iteration variables in the same loop by invoking the items() method on the dictionary.","True","False"," ","True");
+        python_questions[15]=q;
+
+        q=new Questions(QType.Python,"Which of the following is NOT a collection type?","a tuple","an expression","a list","an expression");
+        python_questions[16]=q;
+
+
+        q=new Questions(QType.Python,"What do dictionaries use in order to access their data?","keys that are immutable","a list of tuples","integers indexes beginning at 0","keys that are immutable");
+        python_questions[17]=q;
+
+        q=new Questions(QType.Python,"If word = “puppy”, what is the value of word[4]? ","p","y","u","y");
+        python_questions[18]=q;
+
+        q=new Questions(QType.Python,"What does the list method append() do?","adds an item to the end of a list","creates a new list in place of the first item","replaces the first item of a list with a new item","adds an item to the end of a list");
+        python_questions[19]=q;
+
         q=new Questions(QType.Cpp,"Choose the operator which cannot be overloaded.","/","()","::","::");
         cpp_questions[0]=q;
 
@@ -142,6 +189,53 @@ public class QuestionsArray {
 
         q=new Questions(QType.Java,"Which allows the storage of a null key and null values?","Hashtable","HashMap","None of the above","HashMap");
         all_questions[14]=q;
+
+        q=new Questions(QType.Python,"A continuation loop can be converted to a for loop?","True","False"," ","True");
+        all_questions[15]=q;
+
+        q=new Questions(QType.Python,"Which of the following functions would NOT require an argument?","sum()","random()","type()","random()");
+        all_questions[16]=q;
+
+        q=new Questions(QType.Python,"Given the following expression: \n(status_light1 or status_light2) \n if status_light1 is True, then the entire expression is True","True","False"," ","True");
+        all_questions[17]=q;
+
+        q=new Questions(QType.Python,"Which can NOT be returned by a function with the keyword “return”?","a negative number","a positive number","all of the above","all of the above");
+        all_questions[18]=q;
+
+
+        q=new Questions(QType.Python,"What can cause an infinite loop?","Forgetting to update the control variable","Updating the control variable incorrectly","All of the above","All of the above");
+        all_questions[19]=q;
+
+        q=new Questions(QType.Python,"Which of the following methods give access to the element of the list which  is removed?","del","remove()","pop()","pop()");
+        all_questions[20]=q;
+
+        q=new Questions(QType.Python,"It is permitted to have a list as an element in a list.","True","False"," ","True");
+        all_questions[21]=q;
+
+        q=new Questions(QType.Python,"Given may = 'isolated', which of the following would return the full string?","may[:]","may[1:10]","may[2:]","may[:]");
+        all_questions[22]=q;
+
+        q=new Questions(QType.Python,"Which can be used as a sequence in a for loop?","a string","a list","All of the above","All of the above");
+        all_questions[23]=q;
+
+        q=new Questions(QType.Python,"Which of the following could be used to generate a list (i.e., type of  <class 'list'>)? ","[]","split()","All of the above","All of the above");
+        all_questions[24]=q;
+
+        q=new Questions(QType.Python,"You can loop through a dictionary with two iteration variables in the same loop by invoking the items() method on the dictionary.","True","False"," ","True");
+        all_questions[25]=q;
+
+        q=new Questions(QType.Python,"Which of the following is NOT a collection type?","a tuple","an expression","a list","an expression");
+        all_questions[26]=q;
+
+
+        q=new Questions(QType.Python,"What do dictionaries use in order to access their data?","keys that are immutable","a list of tuples","integers indexes beginning at 0","keys that are immutable");
+        all_questions[27]=q;
+
+        q=new Questions(QType.Python,"If word = “puppy”, what is the value of word[4]? ","p","y","u","y");
+        all_questions[28]=q;
+
+        q=new Questions(QType.Python,"What does the list method append() do?","adds an item to the end of a list","creates a new list in place of the first item","replaces the first item of a list with a new item","adds an item to the end of a list");
+        all_questions[29]=q;
 
     }
 
