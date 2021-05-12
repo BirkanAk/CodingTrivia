@@ -7,7 +7,8 @@ import java.util.Collections;
 enum QType{
     Python,
     Cpp,
-    Java
+    Java,
+    Binghamton,
 }
 
 public class Questions {
