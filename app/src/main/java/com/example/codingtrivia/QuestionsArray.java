@@ -13,10 +13,10 @@ public class QuestionsArray {
 
     public QuestionsArray(){
         java_questions=new Questions[5];
-        python_questions=new Questions[5];
+        python_questions=new Questions[19];
         cpp_questions=new Questions[5];
         bing_questions=new Questions[10];
-        all_questions=new Questions[15];
+        all_questions=new Questions[29];
 
         Questions q;
 
@@ -112,35 +112,35 @@ public class QuestionsArray {
         q=new Questions(QType.Java,"Which allows the storage of a null key and null values?","Hashtable","HashMap","None of the above","HashMap");
         java_questions[4]=q;
 
-        q=new Questions(QType.Java,"Which company was founded in Endicott and maintained its R&D campus there until the early 1990s?","IBM","Apple","Amazon","IBM");
+        q=new Questions(QType.Binghamton,"Which company was founded in Endicott and maintained its R&D campus there until the early 1990s?","IBM","Apple","Amazon","IBM");
         bing_questions[0]=q;
 
-        q=new Questions(QType.Java,"Who is the pioneer of television and creator of the Twilight Zone, grew up on Bennett Avenue on the West Side?(His house still looks creepy tbh)","David Fincher","Rod Sterling","Alfred Hitchcock","Rod Sterling");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"Who is the pioneer of television and creator of the Twilight Zone, grew up on Bennett Avenue on the West Side?(His house still looks creepy tbh)","David Fincher","Rod Sterling","Alfred Hitchcock","Rod Sterling");
+        bing_questions[1]=q;
 
-        q=new Questions(QType.Java," Who is the person that city is named after him? (Never visited Binghamton, but instead was simply a land speculator)","Bruce Wayne","Patrick Madden","William Bingham","William Bingham");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton," Who is the person that city is named after him? (Never visited Binghamton, but instead was simply a land speculator)","Bruce Wayne","Patrick Madden","William Bingham","William Bingham");
+        bing_questions[2]=q;
 
-        q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"How many carousels are there in the Binghamton area?","6","4","0","6");
+        bing_questions[3]=q;
 
-        q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"Which sporting goods company was founded in Binghamton and the original store is the same one on Court Street east of downtown that makes you think 'That can't be a real one.'?","Nike","Dick's","Jordan","Dick's");
+        bing_questions[4]=q;
 
-        q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"Which one is invented in Binghamton?","3D Movie","AR Glasses","Flight Simulator","Flight Simulator");
+        bing_questions[5]=q;
 
-        q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"What is the Apalachin Meeting that happened in west of Binghamton in 1957?","The Meeting of Mob Bosses","The Meeting of CS Professors","The Meeting of The Binghamton Devils Fans","The Meeting of Mob Bosses");
+        bing_questions[6]=q;
 
-        q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"Which audio equipment laboratory founded in Binghamton?","Harman Kardon","Bang&Olufsen","McIntosh","McIntosh");
+        bing_questions[7]=q;
 
-        q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"What is the default value of byte variable?","0","0.0","null","0");
+        bing_questions[8]=q;
 
-        q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
-        bing_questions[0]=q;
+        q=new Questions(QType.Binghamton,"What is the default value of byte variable?","0","0.0","null","0");
+        bing_questions[9]=q;
 
 
 

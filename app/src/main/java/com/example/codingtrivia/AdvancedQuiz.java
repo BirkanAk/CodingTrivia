@@ -54,10 +54,21 @@ public class AdvancedQuiz extends AppCompatActivity {
 
     private void refresh(){
         QuestionsArray.getInstance();
+        /*
+        Random ran = new Random();
+            int randomquestion = ran.nextInt(QuestionsArray.bing_questions.length);
+            question =QuestionsArray.bing_questions[randomquestion];
+            question_text.setText(question.getQuestion());
+
+            String[] ansArr=question.shuffleAnswerArray();
+            ans1.setText(ansArr[0]);
+            ans2.setText(ansArr[1]);
+            ans3.setText(ansArr[2]);
+         */
         if(QuestionsArray.selected=="All"){
             Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.all_questions.length);
-            question =QuestionsArray.all_questions[randomquestion];
+            int randomquestion = ran.nextInt(QuestionsArray.bing_questions.length);
+            question =QuestionsArray.bing_questions[randomquestion];
             question_text.setText(question.getQuestion());
 
             String[] ansArr=question.shuffleAnswerArray();
