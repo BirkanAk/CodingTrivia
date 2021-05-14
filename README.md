@@ -20,3 +20,15 @@ fresh or practice for a job interview. To succeed as a programmer, learn compute
 science, software engineering, web creation, and internet technologies. If you want
 to become a front end or back end developer or simply strengthen your coding skills,
 playing trivia is a fun and simple way to do so. Start learning for free right now.
+
+# Quick Play
+It is a basic mode for improving your skills in Python, Java and C++ with beginner level questions.
+<img src="http://g.recordit.co/6N2ebQWbM3.gif" width=350><br>
+
+# Time Trials
+This mode will test your coding skills with a timer which is counting down. You must hurry!
+<img src="http://g.recordit.co/8NT1ngoXxr.gif" width=350><br>
+
+# Binghamton Quiz
+This mode is a fun mode just created for Binghamton University students. Do you really think that you know Binghamton well enough?
+<img src="http://g.recordit.co/QF4402Wwl5.gif" width=350><br>
