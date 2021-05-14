@@ -304,7 +304,6 @@ public class QuestionsArray {
         q=new Questions(QType.Java,"Which of the below are not unchecked exceptions in java?","RuntimeException","ClassCastException","IOException","IOException");
         all_questions[40]=q;
 
-
     }
 
 

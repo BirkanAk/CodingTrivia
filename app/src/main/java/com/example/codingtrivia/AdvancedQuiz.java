@@ -49,7 +49,6 @@ public class AdvancedQuiz extends AppCompatActivity {
         refresh();
 
 
-
     }
 
     private void refresh(){

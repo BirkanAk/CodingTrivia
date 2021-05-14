@@ -98,7 +98,6 @@ public class QuickPlay extends AppCompatActivity {
         radioGroup.clearCheck();
 
 
-
         scoreText.setTextSize(20);
         Score.getInstance();
         scoreText.setText("Score: " + Score.quick_point);

@@ -29,7 +29,6 @@ public class GameSettings extends AppCompatActivity {
         cppcb=(RadioButton)findViewById(R.id.cb_cpp);
         all_q=(RadioButton)findViewById(R.id.all_q);
 
-
     }
 
 

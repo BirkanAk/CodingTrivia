@@ -135,8 +135,6 @@ public class TimeTrials extends AppCompatActivity {
         }
 
 
-
-
         radioGroup.clearCheck();
 
 
