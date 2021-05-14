@@ -75,7 +75,7 @@ public class AdvancedQuiz extends AppCompatActivity {
         Score.getInstance();
         SharedPreferences prefs = getSharedPreferences("myPrefsKey", MODE_PRIVATE);
         Score.advanced_highscore = prefs.getInt("Advanced Highscore", 0);
-        advanced_highscore.setText("Advanced Highscore: "+Score.advanced_highscore);
+        advanced_highscore.setText("Binghamton Highscore: "+Score.advanced_highscore);
 
     }
 
