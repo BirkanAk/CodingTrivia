@@ -96,6 +96,24 @@ public class QuestionsArray {
         q=new Questions(QType.Cpp,"A C++ program statements can be commented using","Single line comment","Multi line comment","Both (a) and (b).","Both (a) and (b).");
         cpp_questions[4]=q;
 
+        q=new Questions(QType.Cpp,"What is the full form of RTTI.","Runtime type identification","Runtime template identification"," Robust Template Type Inheritance","Runtime type identification");
+        cpp_questions[5]=q;
+
+        q=new Questions(QType.Cpp,"A C++ program statements can be commented using","Single line comment","Multi line comment","Both (a) and (b)","Both (a) and (b)");
+        cpp_questions[6]=q;
+
+        q=new Questions(QType.Cpp,"How can we make an class act as an interface in C++?","By only providing all the functions as virtual functions in the class","Defining the class following with the keyword virtual","Defining the class following with the keyword interface","By only providing all the functions as virtual functions in the class");
+        cpp_questions[7]=q;
+
+        q=new Questions(QType.Cpp,"Operators sizeof and ?:?","Both can be overloaded","Both cannot be overloaded","Only sizeof can be overloaded","Both cannot be overloaded");
+        cpp_questions[8]=q;
+
+        q=new Questions(QType.Cpp,"The operator used to access member function of a structure using its object.",".","->","*",".");
+        cpp_questions[9]=q;
+
+        q=new Questions(QType.Cpp,"Abstract class is __","A class must contain all pure virtual functions","A class must contain at least one pure virtual function","A class may not contain pure virtual function.","A class must contain at least one pure virtual function");
+        cpp_questions[10]=q;
+
         q=new Questions(QType.Java,"What is the default value of byte variable?","0","0.0","null","0");
         java_questions[0]=q;
 
@@ -235,6 +253,24 @@ public class QuestionsArray {
 
         q=new Questions(QType.Python,"What does the list method append() do?","adds an item to the end of a list","creates a new list in place of the first item","replaces the first item of a list with a new item","adds an item to the end of a list");
         all_questions[29]=q;
+
+        q=new Questions(QType.Cpp,"What is the full form of RTTI.","Runtime type identification","Runtime template identification"," Robust Template Type Inheritance","Runtime type identification");
+        all_questions[30]=q;
+
+        q=new Questions(QType.Cpp,"A C++ program statements can be commented using","Single line comment","Multi line comment","Both (a) and (b)","Both (a) and (b)");
+        all_questions[31]=q;
+
+        q=new Questions(QType.Cpp,"How can we make an class act as an interface in C++?","By only providing all the functions as virtual functions in the class","Defining the class following with the keyword virtual","Defining the class following with the keyword interface","By only providing all the functions as virtual functions in the class");
+        all_questions[32]=q;
+
+        q=new Questions(QType.Cpp,"Operators sizeof and ?:?","Both can be overloaded","Both cannot be overloaded","Only sizeof can be overloaded","Both cannot be overloaded");
+        all_questions[33]=q;
+
+        q=new Questions(QType.Cpp,"The operator used to access member function of a structure using its object.",".","->","*",".");
+        all_questions[34]=q;
+
+        q=new Questions(QType.Cpp,"Abstract class is __","A class must contain all pure virtual functions","A class must contain at least one pure virtual function","A class may not contain pure virtual function.","A class must contain at least one pure virtual function");
+        all_questions[35]=q;
 
     }
 
