@@ -11,11 +11,11 @@ public class QuestionsArray {
     public static String selected="All";
 
     public QuestionsArray(){
-        java_questions=new Questions[5];
+        java_questions=new Questions[10];
         python_questions=new Questions[20];
-        cpp_questions=new Questions[5];
+        cpp_questions=new Questions[11];
         bing_questions=new Questions[10];
-        all_questions=new Questions[30];
+        all_questions=new Questions[41];
 
         Questions q;
 
@@ -128,6 +128,23 @@ public class QuestionsArray {
 
         q=new Questions(QType.Java,"Which allows the storage of a null key and null values?","Hashtable","HashMap","None of the above","HashMap");
         java_questions[4]=q;
+
+        q=new Questions(QType.Java,"Which of the below is valid way to instantiate an array in java?","int myArray [] = {1, 3, 5};","int myArray [] [] = {1,2,3,4};","int [] myArray = (5, 4, 3);","int myArray [] = {1, 3, 5};");
+        java_questions[5]=q;
+
+        q=new Questions(QType.Java,"Which of the below are reserved keyword in Java?","array","goto","null","goto");
+        java_questions[6]=q;
+
+        q=new Questions(QType.Java,"What is the valid statements for static keyword in Java?","We can have static block in a class.","The static block in a class is executed every time an object of class is created.","We can define static block inside a method.","We can have static block in a class.");
+        java_questions[7]=q;
+
+        q=new Questions(QType.Java,"Which of the following statements are true for inheritance in Java?","The “extend” keyword is used to extend a class in java.","You can extend multiple classes in java.","We can’t extend Final classes in java.","We can’t extend Final classes in java.");
+        java_questions[8]=q;
+
+        q=new Questions(QType.Java,"Which of the below are not unchecked exceptions in java?","RuntimeException","ClassCastException","IOException","IOException");
+        java_questions[9]=q;
+
+
 
         q=new Questions(QType.Binghamton,"Which company was founded in Endicott and maintained its R&D campus there until the early 1990s?","IBM","Apple","Amazon","IBM");
         bing_questions[0]=q;
@@ -271,6 +288,22 @@ public class QuestionsArray {
 
         q=new Questions(QType.Cpp,"Abstract class is __","A class must contain all pure virtual functions","A class must contain at least one pure virtual function","A class may not contain pure virtual function.","A class must contain at least one pure virtual function");
         all_questions[35]=q;
+
+        q=new Questions(QType.Java,"Which of the below is valid way to instantiate an array in java?","int myArray [] = {1, 3, 5};","int myArray [] [] = {1,2,3,4};","int [] myArray = (5, 4, 3);","int myArray [] = {1, 3, 5};");
+        all_questions[36]=q;
+
+        q=new Questions(QType.Java,"Which of the below are reserved keyword in Java?","array","goto","null","goto");
+        all_questions[37]=q;
+
+        q=new Questions(QType.Java,"What is the valid statements for static keyword in Java?","We can have static block in a class.","The static block in a class is executed every time an object of class is created.","We can define static block inside a method.","We can have static block in a class.");
+        all_questions[38]=q;
+
+        q=new Questions(QType.Java,"Which of the following statements are true for inheritance in Java?","The “extend” keyword is used to extend a class in java.","You can extend multiple classes in java.","We can’t extend Final classes in java.","We can’t extend Final classes in java.");
+        all_questions[39]=q;
+
+        q=new Questions(QType.Java,"Which of the below are not unchecked exceptions in java?","RuntimeException","ClassCastException","IOException","IOException");
+        all_questions[40]=q;
+
 
     }
 
