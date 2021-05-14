@@ -35,7 +35,7 @@ public class TimeTrials extends AppCompatActivity {
     RadioGroup radioGroup;
     TextView timeTrialHighscore;
     // Initialize Time Duration
-    long duration = TimeUnit.SECONDS.toMillis(15);
+    long duration = TimeUnit.SECONDS.toMillis(60);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
