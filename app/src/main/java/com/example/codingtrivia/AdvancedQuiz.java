@@ -54,65 +54,19 @@ public class AdvancedQuiz extends AppCompatActivity {
 
     private void refresh(){
         QuestionsArray.getInstance();
-        /*
+
         Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.bing_questions.length);
-            question =QuestionsArray.bing_questions[randomquestion];
-            question_text.setText(question.getQuestion());
+        int randomquestion = ran.nextInt(QuestionsArray.bing_questions.length);
+        question =QuestionsArray.bing_questions[randomquestion];
+        question_text.setText(question.getQuestion());
 
-            String[] ansArr=question.shuffleAnswerArray();
-            ans1.setText(ansArr[0]);
-            ans2.setText(ansArr[1]);
-            ans3.setText(ansArr[2]);
-         */
-        if(QuestionsArray.selected=="All"){
-            Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.bing_questions.length);
-            question =QuestionsArray.bing_questions[randomquestion];
-            question_text.setText(question.getQuestion());
+        String[] ansArr=question.shuffleAnswerArray();
+        ans1.setText(ansArr[0]);
+        ans2.setText(ansArr[1]);
+        ans3.setText(ansArr[2]);
 
-            String[] ansArr=question.shuffleAnswerArray();
-            ans1.setText(ansArr[0]);
-            ans2.setText(ansArr[1]);
-            ans3.setText(ansArr[2]);
-        }
-        else if(QuestionsArray.selected=="C++"){
-            Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.cpp_questions.length);
-            question =QuestionsArray.cpp_questions[randomquestion];
-            question_text.setText(question.getQuestion());
-
-            String[] ansArr=question.shuffleAnswerArray();
-            ans1.setText(ansArr[0]);
-            ans2.setText(ansArr[1]);
-            ans3.setText(ansArr[2]);
-        }
-        else if(QuestionsArray.selected=="Python"){
-            Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.python_questions.length);
-            question =QuestionsArray.python_questions[randomquestion];
-            question_text.setText(question.getQuestion());
-
-            String[] ansArr=question.shuffleAnswerArray();
-            ans1.setText(ansArr[0]);
-            ans2.setText(ansArr[1]);
-            ans3.setText(ansArr[2]);
-        }
-        else if(QuestionsArray.selected=="Java"){
-            Random ran = new Random();
-            int randomquestion = ran.nextInt(QuestionsArray.java_questions.length);
-            question =QuestionsArray.java_questions[randomquestion];
-            question_text.setText(question.getQuestion());
-
-            String[] ansArr=question.shuffleAnswerArray();
-            ans1.setText(ansArr[0]);
-            ans2.setText(ansArr[1]);
-            ans3.setText(ansArr[2]);
-        }
 
         radioGroup.clearCheck();
-
-
 
         scoreText.setTextSize(20);
         Score.getInstance();

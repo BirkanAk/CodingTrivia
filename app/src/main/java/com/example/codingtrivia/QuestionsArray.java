@@ -1,6 +1,5 @@
 package com.example.codingtrivia;
 
-import java.util.Arrays;
 
 public class QuestionsArray {
     private static QuestionsArray QUESTIONS=null;
@@ -13,10 +12,10 @@ public class QuestionsArray {
 
     public QuestionsArray(){
         java_questions=new Questions[5];
-        python_questions=new Questions[19];
+        python_questions=new Questions[20];
         cpp_questions=new Questions[5];
         bing_questions=new Questions[10];
-        all_questions=new Questions[29];
+        all_questions=new Questions[30];
 
         Questions q;
 
@@ -136,10 +135,10 @@ public class QuestionsArray {
         q=new Questions(QType.Binghamton,"Which audio equipment laboratory founded in Binghamton?","Harman Kardon","Bang&Olufsen","McIntosh","McIntosh");
         bing_questions[7]=q;
 
-        q=new Questions(QType.Binghamton,"What is the default value of byte variable?","0","0.0","null","0");
+        q=new Questions(QType.Binghamton,"What's Professor Madden's favourite thing to say?","Do your homework!","Get to hacking!","Study for your final!","Get to hacking!");
         bing_questions[8]=q;
 
-        q=new Questions(QType.Binghamton,"What is the default value of byte variable?","0","0.0","null","0");
+        q=new Questions(QType.Binghamton,"Where did Professor Madden complete his PHD?","UCLA","Hogwarts","Binghamton","UCLA");
         bing_questions[9]=q;
 
 
